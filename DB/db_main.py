@@ -8,6 +8,7 @@ def add_candidats(profile, name, location, salary, work_mode, stack, experience,
         cur.execute(select_query, (profile, name, location, salary, work_mode, stack, experience, resume, coment, hashtag))
         return 'Анкета добавлена'
 
+
 def export_csv():
     with conn.cursor() as cur:
         cur.execute("SELECT * FROM candidats")
@@ -16,6 +17,6 @@ def export_csv():
             writer = csv.writer(f, delimiter=',')
             writer.writerow(result)
 
-export_csv()
+
 
 

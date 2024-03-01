@@ -173,7 +173,9 @@ async def get_check(call: CallbackQuery, state: FSMContext):
                 f'Хэштеги: {data["hashtag"]}\n\n'
                 f'<i>Оставьте комментарий с вашим именем и фамилией, если берете в работу</i>')
         await call.message.answer("Кандидат на проверку направлен", parse_mode="HTML")
-        await bot.send_message(509695580, text, parse_mode="HTML")
+        with open('tegs_3.txt', 'r') as f:
+            id_admin = f.read()
+            await bot.send_message(int(id_admin), text, parse_mode="HTML")
         add_candidats(data["profile"], data["name"], data["location"], data["salary"], data["work_mode"], data["stack"],
                       data["experience"], data["resume"], data["coment"], data["hashtag"])
         conn.commit()
@@ -190,7 +192,9 @@ async def get_check(call: CallbackQuery, state: FSMContext):
                 f'Резюме: {data["resume"]}\n'
                 f'Хэштеги: {data["hashtag"]}\n\n'
                 f'<i>Оставьте комментарий с вашим именем и фамилией, если берете в работу</i>')
-        await bot.send_message(537554059, text)
+        with open('tegs_4.txt', 'r') as f:
+            id_admin = f.read()
+            await bot.send_message(int(id_admin), text)
         await call.message.answer("Кандидат на проверку направлен", parse_mode="HTML")
         add_candidats(data["profile"], data["name"], data["location"], data["salary"], data["work_mode"], data["stack"],
                       data["experience"], data["resume"], data["coment"], data["hashtag"])

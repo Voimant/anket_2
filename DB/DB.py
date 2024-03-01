@@ -21,5 +21,5 @@ with psycopg2.connect(user="root",
             hashtag TEXT NOT NULL)"""
             cur.execute(create_query)
             return('Таблица создана')
-   # print(create_db())
-   # conn.commit()
+#print(create_db())
+#conn.commit()
