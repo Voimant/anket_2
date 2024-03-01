@@ -1,0 +1,7 @@
+.idea
+/__pycache__
+/venv
+/env
+/handlers/__pycache__
+/DB/__pycache__
+
